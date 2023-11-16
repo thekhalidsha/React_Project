@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './Todo.css'
-import QuoteGenerator from './extraFunc';
 
 class Todo extends Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class Todo extends Component {
 
   // For Listening the Keyboard Input incase user clicks ENTER Button for Submitting Todo.
   KeyCode = (e) => {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       document.getElementById('TodoButton').click();
     }
   }

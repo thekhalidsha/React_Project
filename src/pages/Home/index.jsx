@@ -9,7 +9,7 @@ export const Home = () => {
                 <div class="col-lg-6">
                     <h1 class="display-4 mb-3 animated slideInDown">KodeJex</h1>
                     <p class="animated slideInDown">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, facere temporibus ad, aliquam recusandae atque provident rem vitae minima obcaecati nobis qui quam? Culpa eaque sit nesciunt ab minus magnam.</p>
-                    <a href="" class="btn btn-primary py-3 px-4 animated slideInDown">Explore More</a>
+                    <a href="#khalid" class="btn btn-primary py-3 px-4 animated slideInDown">Explore More</a>
                 </div>
                 <div class="col-lg-6 fadeIn">
                     <img class="img-fluid" src={BannerLogo} alt="banner_img" />
