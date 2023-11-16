@@ -1,6 +1,6 @@
 {
   "short_name": "KodeJex",
-  "name": "KodeJex",
+  "name": "The Skill of Coding",
   "icons": [
     {
       "src": "favicon.png",
@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "favicon.png",
+      "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
