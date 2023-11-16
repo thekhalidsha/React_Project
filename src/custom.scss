@@ -1,0 +1,12 @@
+$theme-colors: (
+  "primary": "red",
+  "secondary": "#d63384",
+  "success": "#28a745",
+  "info": "#17a2b8",
+  "warning": "#ffc107",
+  "danger": "#dc3545",
+  "light": "#f8f9fa",
+  "dark": "#212529",
+);
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/scss/bootstrap";

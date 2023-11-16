@@ -1,0 +1,79 @@
+import React, { Component } from 'react'
+import './Todo.css'
+
+class TodoApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      TodoInput: "",
+      TodoList: [],
+    };
+  }
+  FIcon = (value) => {
+    return(
+      <i className={`fas ${value}`}></i>
+    )
+  }
+  ContentBuffer = (e) => {
+    this.setState(() => ({ TodoInput: e.target.value }))
+  }
+  AddTodo = () => {
+    var TempArray = this.state.TodoList;
+    var TempInput = this.state.TodoInput;
+    TempArray.push({ title: TempInput, status: true });
+    this.setState(() => ({ TodoList: TempArray }));
+    console.log(this.state.TodoList)
+  }
+  TodoDelete = (id) => {
+    var TempArray = this.state.TodoList;
+    TempArray.splice(id, 1);
+    this.setState(() => ({ TodoList: TempArray }))
+  }
+  TodoStatus = (id) => {
+    var TempArray = this.state.TodoList;
+    (TempArray[id].status? TempArray[id].status = false : TempArray[id].status = true)
+    this.setState(() => ({ TodoList: TempArray }))
+  }
+  render() {
+    return (
+      <section className='min-h-Home bg-dark text-white p-2 pb-2'>
+        <center><h3>TodoClass Page</h3></center>
+        <div className="t_main">
+          <div className="t_first">
+            <h1>Mohammed Khalid</h1>
+          </div>
+          <div className="t_second text-dark">
+            <h3>To-Do List <i className="fa-solid fa-calendar-check"></i></h3>
+            <div className="to_do">
+              <div className="boxed">
+                <input type="text" placeholder='Add your Task' onChange={this.ContentBuffer} />
+                <button onClick={this.AddTodo}>{this.FIcon('fa-regular fa-pen-to-square')}</button>
+              </div>
+              <div className="listed py-2 mt-2">
+                <ul className='ul'>
+                  {
+                    (this.state.TodoList.length <= 0 ? <center><h5 className='mt-5'>No Records to Show</h5></center>
+                      :
+                      this.state.TodoList.map((item, key) => {
+                        return (
+                          <li key={key}>
+                            <span onClick={()=>{this.TodoStatus(key)}} className={(item.status == true? 'li_square':'li_check_square')}>
+                              {item.status}
+                            </span>
+                            {(item.status == false ? <span className='crosslined'>{item.title}</span> : <span>{item.title}</span>)}
+                            <button className="closeMark" onClick={() => { this.TodoDelete(key) }}>{this.FIcon('fa-x')}</button>
+                          </li>
+                        )
+                      })
+                    )
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+}
+export default TodoApp;
